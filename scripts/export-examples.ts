@@ -1,0 +1,2 @@
+import {writeFileSync} from 'node:fs';import{scenario}from'../fixtures/scenarios';import{validate}from'../packages/contracts';
+for(const [name,key,tick] of [['lively-peak','lively',20],['lively-calm','lively',100],['slurm30','slurm30',0],['atlas','atlas',0],['aurora','aurora',0],['reservation','atlas',7],['reservation-active','atlas',8],['reservation-finished','atlas',12]] as const){const s=scenario(key,tick,'exemple-demarrage');s.observedAt='2026-10-13T12:00:00.000Z';writeFileSync(`fixtures/scenarios/examples/${name}.json`,JSON.stringify(validate(s),null,2)+'\n');}

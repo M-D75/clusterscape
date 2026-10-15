@@ -1,0 +1,628 @@
+{
+  "version": 3,
+  "clock": {
+    "mode": "simulated",
+    "now": "2026-10-13T12:00:14.000Z",
+    "rate": 1
+  },
+  "stream": {
+    "epoch": "exemple-demarrage"
+  },
+  "units": {
+    "cpus": "logical-cpu",
+    "memory": "GiB",
+    "gpus": "device",
+    "usage": "percent-cpu-capacity"
+  },
+  "cluster": {
+    "id": "atlas",
+    "name": "Atlas · centre de calcul"
+  },
+  "sequence": 7,
+  "observedAt": "2026-10-13T12:00:00.000Z",
+  "topology": {
+    "partitions": [
+      {
+        "id": "short",
+        "name": "Express",
+        "limitHours": 2
+      },
+      {
+        "id": "normal",
+        "name": "Production",
+        "limitHours": 24
+      },
+      {
+        "id": "long",
+        "name": "Longue durée",
+        "limitHours": 72
+      },
+      {
+        "id": "mem",
+        "name": "Grande mémoire",
+        "limitHours": 48
+      },
+      {
+        "id": "gpu",
+        "name": "Accélération",
+        "limitHours": 24
+      }
+    ],
+    "users": [
+      "chercheur-1",
+      "chercheur-2",
+      "chercheur-3",
+      "chercheur-4",
+      "chercheur-5",
+      "chercheur-6",
+      "chercheur-7",
+      "chercheur-8",
+      "chercheur-9",
+      "chercheur-10",
+      "chercheur-11",
+      "chercheur-12"
+    ]
+  },
+  "state": {
+    "nodes": [
+      {
+        "id": "n0",
+        "name": "atlas-01",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "n1",
+        "name": "atlas-02",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 60,
+        "memoryUsed": 24
+      },
+      {
+        "id": "n2",
+        "name": "atlas-03",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 71,
+        "memoryUsed": 25
+      },
+      {
+        "id": "n3",
+        "name": "atlas-04",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 82,
+        "memoryUsed": 46
+      },
+      {
+        "id": "n4",
+        "name": "atlas-05",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "n5",
+        "name": "atlas-06",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "n6",
+        "name": "atlas-07",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "n7",
+        "name": "atlas-08",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "short",
+          "normal",
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "n8",
+        "name": "atlas-09",
+        "kind": "memory",
+        "cpus": 64,
+        "memory": 512,
+        "gpus": 0,
+        "partitions": [
+          "mem"
+        ],
+        "status": "ready",
+        "usage": 47,
+        "memoryUsed": 47
+      },
+      {
+        "id": "n9",
+        "name": "atlas-10",
+        "kind": "memory",
+        "cpus": 64,
+        "memory": 512,
+        "gpus": 0,
+        "partitions": [
+          "mem"
+        ],
+        "status": "ready",
+        "usage": 58,
+        "memoryUsed": 48
+      },
+      {
+        "id": "n10",
+        "name": "atlas-11",
+        "kind": "gpu",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 4,
+        "partitions": [
+          "gpu"
+        ],
+        "status": "ready",
+        "usage": 69,
+        "memoryUsed": 27
+      },
+      {
+        "id": "n11",
+        "name": "atlas-12",
+        "kind": "gpu",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 4,
+        "partitions": [
+          "gpu"
+        ],
+        "status": "ready",
+        "usage": 80,
+        "memoryUsed": 28
+      },
+      {
+        "id": "login",
+        "name": "Accès / connexion",
+        "kind": "access",
+        "cpus": 0,
+        "memory": 0,
+        "gpus": 0,
+        "partitions": [],
+        "status": "ready",
+        "usage": null,
+        "memoryUsed": null
+      }
+    ],
+    "jobs": [
+      {
+        "id": "t1",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-1",
+        "partition": "short",
+        "status": "finished",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t2",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-2",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n1",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Transport multi-nœuds",
+        "user": "chercheur-3",
+        "partition": "long",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 2
+        },
+        "allocations": [
+          {
+            "nodeId": "n2",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          },
+          {
+            "nodeId": "n3",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t4",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse climat",
+        "user": "chercheur-4",
+        "partition": "short",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n3",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t5",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-5",
+        "partition": "mem",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n8",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t6",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-6",
+        "partition": "mem",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n9",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t7",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Transport multi-nœuds",
+        "user": "chercheur-7",
+        "partition": "gpu",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 1,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n10",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 1
+          }
+        ]
+      },
+      {
+        "id": "t8",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse climat",
+        "user": "chercheur-8",
+        "partition": "gpu",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 1,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n11",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 1
+          }
+        ]
+      },
+      {
+        "id": "t9",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-9",
+        "partition": "long",
+        "status": "queued",
+        "waitingReason": "Créneau réservé pas encore ouvert",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t10",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-10",
+        "partition": "short",
+        "status": "queued",
+        "waitingReason": "Priorité du scénario, démarrage non garanti",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t11",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Transport multi-nœuds",
+        "user": "chercheur-11",
+        "partition": "gpu",
+        "status": "queued",
+        "waitingReason": "Ressources ou priorité du scheduler",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 1,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t12",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse climat",
+        "user": "chercheur-12",
+        "partition": "gpu",
+        "status": "queued",
+        "waitingReason": "Ressources ou priorité du scheduler",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 1,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t13",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-1",
+        "partition": "short",
+        "status": "queued",
+        "waitingReason": "Ressources ou priorité du scheduler",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t14",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-2",
+        "partition": "normal",
+        "status": "queued",
+        "waitingReason": "Ressources ou priorité du scheduler",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t15",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Transport multi-nœuds",
+        "user": "chercheur-3",
+        "partition": "long",
+        "status": "queued",
+        "waitingReason": "Ressources ou priorité du scheduler",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t16",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse climat",
+        "user": "chercheur-4",
+        "partition": "short",
+        "status": "finished",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t17",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-5",
+        "partition": "normal",
+        "status": "finished",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t18",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-6",
+        "partition": "long",
+        "status": "failed",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      }
+    ],
+    "reservations": [
+      {
+        "id": "r-0",
+        "jobId": "t9",
+        "status": "planned",
+        "startsAt": "2026-10-13T12:00:16.000Z",
+        "endsAt": "2026-10-13T12:00:24.000Z",
+        "allocations": [
+          {
+            "nodeId": "n0",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      }
+    ]
+  }
+}

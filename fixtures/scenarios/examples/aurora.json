@@ -1,0 +1,257 @@
+{
+  "version": 3,
+  "clock": {
+    "mode": "simulated",
+    "now": "2026-10-13T12:00:00.000Z",
+    "rate": 1
+  },
+  "stream": {
+    "epoch": "exemple-demarrage"
+  },
+  "units": {
+    "cpus": "logical-cpu",
+    "memory": "GiB",
+    "gpus": "device",
+    "usage": "percent-cpu-capacity"
+  },
+  "cluster": {
+    "id": "aurora",
+    "name": "Aurore · laboratoire"
+  },
+  "sequence": 0,
+  "observedAt": "2026-10-13T12:00:00.000Z",
+  "topology": {
+    "partitions": [
+      {
+        "id": "science",
+        "name": "Science",
+        "limitHours": 6
+      },
+      {
+        "id": "image",
+        "name": "Image",
+        "limitHours": 12
+      }
+    ],
+    "users": [
+      "chercheur-1",
+      "chercheur-2",
+      "chercheur-3",
+      "chercheur-4"
+    ]
+  },
+  "state": {
+    "nodes": [
+      {
+        "id": "n0",
+        "name": "aurore-01",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "science"
+        ],
+        "status": "ready",
+        "usage": 45,
+        "memoryUsed": 36
+      },
+      {
+        "id": "n1",
+        "name": "aurore-02",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "science"
+        ],
+        "status": "ready",
+        "usage": 56,
+        "memoryUsed": 24
+      },
+      {
+        "id": "n2",
+        "name": "aurore-03",
+        "kind": "standard",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "science"
+        ],
+        "status": "ready",
+        "usage": 67,
+        "memoryUsed": 25
+      },
+      {
+        "id": "n3",
+        "name": "aurore-04",
+        "kind": "gpu",
+        "cpus": 32,
+        "memory": 128,
+        "gpus": 4,
+        "partitions": [
+          "image"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "memoryUsed": 8
+      },
+      {
+        "id": "login",
+        "name": "Accès / connexion",
+        "kind": "access",
+        "cpus": 0,
+        "memory": 0,
+        "gpus": 0,
+        "partitions": [],
+        "status": "ready",
+        "usage": null,
+        "memoryUsed": null
+      }
+    ],
+    "jobs": [
+      {
+        "id": "t1",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-1",
+        "partition": "science",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n0",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-2",
+        "partition": "science",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "n1",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Transport multi-nœuds",
+        "user": "chercheur-3",
+        "partition": "science",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 2
+        },
+        "allocations": [
+          {
+            "nodeId": "n2",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          },
+          {
+            "nodeId": "n0",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t4",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse climat",
+        "user": "chercheur-4",
+        "partition": "science",
+        "status": "queued",
+        "waitingReason": "Créneau réservé pas encore ouvert",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t5",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Simulation fluide",
+        "user": "chercheur-1",
+        "partition": "science",
+        "status": "queued",
+        "waitingReason": "Priorité du scénario, démarrage non garanti",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t6",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Assemblage génome",
+        "user": "chercheur-2",
+        "partition": "science",
+        "status": "failed",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      }
+    ],
+    "reservations": [
+      {
+        "id": "r-0",
+        "jobId": "t4",
+        "status": "planned",
+        "startsAt": "2026-10-13T12:00:16.000Z",
+        "endsAt": "2026-10-13T12:00:24.000Z",
+        "allocations": [
+          {
+            "nodeId": "n0",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      }
+    ]
+  }
+}

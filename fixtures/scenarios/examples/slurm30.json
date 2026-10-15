@@ -1,0 +1,1245 @@
+{
+  "version": 3,
+  "clock": {
+    "mode": "simulated",
+    "now": "2026-10-13T12:00:00.000Z",
+    "rate": 1
+  },
+  "stream": {
+    "epoch": "exemple-demarrage"
+  },
+  "units": {
+    "cpus": "logical-cpu",
+    "memory": "GiB",
+    "gpus": "device",
+    "usage": "percent-cpu-capacity"
+  },
+  "cluster": {
+    "id": "slurm30",
+    "name": "Profil fourni · 30 nœuds simulés"
+  },
+  "sequence": 0,
+  "observedAt": "2026-10-13T12:00:00.000Z",
+  "topology": {
+    "referenceNotice": "30 nœuds et appartenances exacts du relevé fourni, non temps réel. Jobs, allocations et mesures entièrement fictifs. Capacités représentatives sur les groupes hétérogènes (+), pas configuration réelle par nœud.",
+    "communication": {
+      "id": "communication-centre",
+      "name": "Centre de communication",
+      "description": "Repère logique de communication simulée ; aucun serveur physique décrit."
+    },
+    "partitions": [
+      {
+        "id": "long",
+        "name": "long",
+        "limitHours": 1080,
+        "limitUnlimited": false,
+        "isDefault": false,
+        "reference": {
+          "memberships": 5,
+          "cpus": 12,
+          "cpuMinimum": true,
+          "memoryMiB": 48255,
+          "memoryMinimum": true,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "short",
+        "name": "short",
+        "limitHours": 24,
+        "limitUnlimited": false,
+        "isDefault": false,
+        "reference": {
+          "memberships": 5,
+          "cpus": 12,
+          "cpuMinimum": true,
+          "memoryMiB": 64355,
+          "memoryMinimum": true,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "normal",
+        "name": "normal",
+        "limitHours": 336,
+        "limitUnlimited": false,
+        "isDefault": true,
+        "reference": {
+          "memberships": 13,
+          "cpus": 12,
+          "cpuMinimum": true,
+          "memoryMiB": 48255,
+          "memoryMinimum": true,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "supermem",
+        "name": "supermem",
+        "limitHours": 336,
+        "limitUnlimited": false,
+        "isDefault": false,
+        "reference": {
+          "memberships": 2,
+          "cpus": 40,
+          "cpuMinimum": true,
+          "memoryMiB": 1031771,
+          "memoryMinimum": true,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "global",
+        "name": "global",
+        "limitHours": null,
+        "limitUnlimited": true,
+        "isDefault": false,
+        "reference": {
+          "memberships": 1,
+          "cpus": 112,
+          "cpuMinimum": false,
+          "memoryMiB": 513930,
+          "memoryMinimum": false,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "highmem",
+        "name": "highmem",
+        "limitHours": 1080,
+        "limitUnlimited": false,
+        "isDefault": false,
+        "reference": {
+          "memberships": 3,
+          "cpus": 112,
+          "cpuMinimum": false,
+          "memoryMiB": 514443,
+          "memoryMinimum": true,
+          "gpus": 0
+        }
+      },
+      {
+        "id": "gpu",
+        "name": "gpu",
+        "limitHours": 504,
+        "limitUnlimited": false,
+        "isDefault": false,
+        "reference": {
+          "memberships": 1,
+          "cpus": 24,
+          "cpuMinimum": false,
+          "memoryMiB": 192045,
+          "memoryMinimum": false,
+          "gpus": 7
+        }
+      }
+    ],
+    "users": [
+      "chercheur-1",
+      "chercheur-2",
+      "chercheur-3",
+      "chercheur-4",
+      "chercheur-5",
+      "chercheur-6",
+      "chercheur-7",
+      "chercheur-8",
+      "chercheur-9",
+      "chercheur-10",
+      "chercheur-11",
+      "chercheur-12"
+    ]
+  },
+  "state": {
+    "nodes": [
+      {
+        "id": "node0",
+        "name": "node0",
+        "kind": "standard",
+        "cpus": 24,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 45,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 22
+      },
+      {
+        "id": "node1",
+        "name": "node1",
+        "kind": "standard",
+        "cpus": 48,
+        "memory": 256,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 56,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 31
+      },
+      {
+        "id": "node2",
+        "name": "node2",
+        "kind": "memory",
+        "cpus": 40,
+        "memory": 1024,
+        "gpus": 0,
+        "partitions": [
+          "supermem"
+        ],
+        "status": "ready",
+        "usage": 67,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 399
+      },
+      {
+        "id": "node3",
+        "name": "node3",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "short"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node4",
+        "name": "node4",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 128,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 89,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 28
+      },
+      {
+        "id": "node5",
+        "name": "node5",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 55,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 26
+      },
+      {
+        "id": "node7",
+        "name": "node7",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 66,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 28
+      },
+      {
+        "id": "node8",
+        "name": "node8",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 77,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 18
+      },
+      {
+        "id": "node9",
+        "name": "node9",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 88,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 20
+      },
+      {
+        "id": "node10",
+        "name": "node10",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "long"
+        ],
+        "status": "invalid",
+        "usage": null,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "inval",
+          "responding": true
+        },
+        "memoryUsed": null
+      },
+      {
+        "id": "node11",
+        "name": "node11",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "down",
+        "usage": null,
+        "responding": false,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "down",
+          "responding": false
+        },
+        "memoryUsed": null
+      },
+      {
+        "id": "node12",
+        "name": "node12",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node13",
+        "name": "node13",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node14",
+        "name": "node14",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "short"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node15",
+        "name": "node15",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "short"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node16",
+        "name": "node16",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "short"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node17",
+        "name": "node17",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 86,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 21
+      },
+      {
+        "id": "node18",
+        "name": "node18",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "short"
+        ],
+        "status": "ready",
+        "usage": 52,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 23
+      },
+      {
+        "id": "node20",
+        "name": "node20",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 63,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 25
+      },
+      {
+        "id": "node21",
+        "name": "node21",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 74,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 26
+      },
+      {
+        "id": "node22",
+        "name": "node22",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node23",
+        "name": "node23",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "long"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 4
+      },
+      {
+        "id": "node24",
+        "name": "node24",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 62,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 20
+      },
+      {
+        "id": "node25",
+        "name": "node25",
+        "kind": "memory",
+        "cpus": 40,
+        "memory": 1024,
+        "gpus": 0,
+        "partitions": [
+          "supermem"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 61
+      },
+      {
+        "id": "node26",
+        "name": "node26",
+        "kind": "gpu",
+        "cpus": 24,
+        "memory": 187.5439453125,
+        "gpus": 7,
+        "partitions": [
+          "gpu"
+        ],
+        "status": "ready",
+        "usage": 84,
+        "responding": true,
+        "capacityBasis": "source-exact",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 30
+      },
+      {
+        "id": "node27",
+        "name": "node27",
+        "kind": "standard",
+        "cpus": 12,
+        "memory": 64,
+        "gpus": 0,
+        "partitions": [
+          "normal"
+        ],
+        "status": "ready",
+        "usage": 50,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "alloc",
+          "responding": true
+        },
+        "memoryUsed": 25
+      },
+      {
+        "id": "node28",
+        "name": "node28",
+        "kind": "memory",
+        "cpus": 112,
+        "memory": 512,
+        "gpus": 0,
+        "partitions": [
+          "highmem"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 31
+      },
+      {
+        "id": "node29",
+        "name": "node29",
+        "kind": "memory",
+        "cpus": 112,
+        "memory": 512,
+        "gpus": 0,
+        "partitions": [
+          "highmem"
+        ],
+        "status": "ready",
+        "usage": 0,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "idle",
+          "responding": true
+        },
+        "memoryUsed": 31
+      },
+      {
+        "id": "node30",
+        "name": "node30",
+        "kind": "memory",
+        "cpus": 112,
+        "memory": 512,
+        "gpus": 0,
+        "partitions": [
+          "highmem"
+        ],
+        "status": "ready",
+        "usage": 83,
+        "responding": true,
+        "capacityBasis": "representative",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 169
+      },
+      {
+        "id": "node31",
+        "name": "node31",
+        "kind": "standard",
+        "cpus": 112,
+        "memory": 501.884765625,
+        "gpus": 0,
+        "partitions": [
+          "global"
+        ],
+        "status": "ready",
+        "usage": 49,
+        "responding": true,
+        "capacityBasis": "source-exact",
+        "referenceState": {
+          "scheduler": "mix",
+          "responding": true
+        },
+        "memoryUsed": 46
+      }
+    ],
+    "jobs": [
+      {
+        "id": "t1",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-1",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 24,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node0",
+            "cpus": 24,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-2",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 48,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node1",
+            "cpus": 48,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul multi-nœuds",
+        "user": "chercheur-3",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 2
+        },
+        "allocations": [
+          {
+            "nodeId": "node4",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          },
+          {
+            "nodeId": "node8",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t4",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-4",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 12,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node5",
+            "cpus": 12,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t5",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-5",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 12,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node7",
+            "cpus": 12,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t6",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-6",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 12,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node21",
+            "cpus": 12,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t7",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul normal",
+        "user": "chercheur-7",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 12,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node27",
+            "cpus": 12,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t8",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul GPU",
+        "user": "chercheur-8",
+        "partition": "gpu",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 24,
+          "memory": 32,
+          "gpus": 7,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node26",
+            "cpus": 24,
+            "memory": 32,
+            "gpus": 7
+          }
+        ]
+      },
+      {
+        "id": "t20",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-9",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node9",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t21",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-10",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node17",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t22",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-11",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node20",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t23",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-12",
+        "partition": "normal",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node24",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t24",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-1",
+        "partition": "short",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 6,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node18",
+            "cpus": 6,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t25",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-2",
+        "partition": "supermem",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 20,
+          "memory": 614,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node2",
+            "cpus": 20,
+            "memory": 614,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t26",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-3",
+        "partition": "global",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 56,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node31",
+            "cpus": 56,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t27",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul partiel simulé",
+        "user": "chercheur-4",
+        "partition": "highmem",
+        "status": "running",
+        "waitingReason": null,
+        "request": {
+          "cpus": 56,
+          "memory": 307,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": [
+          {
+            "nodeId": "node30",
+            "cpus": 56,
+            "memory": 307,
+            "gpus": 0
+          }
+        ]
+      },
+      {
+        "id": "t9",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Créneau normal",
+        "user": "chercheur-5",
+        "partition": "normal",
+        "status": "queued",
+        "waitingReason": "Créneau réservé pas encore ouvert",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t10",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul court",
+        "user": "chercheur-6",
+        "partition": "short",
+        "status": "queued",
+        "waitingReason": "Priorité du scénario, démarrage non garanti",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t11",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Analyse en attente",
+        "user": "chercheur-7",
+        "partition": "normal",
+        "status": "queued",
+        "waitingReason": "Priorité du scheduler simulé",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t12",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul en attente",
+        "user": "chercheur-8",
+        "partition": "short",
+        "status": "queued",
+        "waitingReason": "Priorité du scheduler simulé",
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t13",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Mémoire en attente",
+        "user": "chercheur-9",
+        "partition": "highmem",
+        "status": "queued",
+        "waitingReason": "Priorité du scheduler simulé",
+        "request": {
+          "cpus": 8,
+          "memory": 307,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      },
+      {
+        "id": "t18",
+        "submittedAt": "2026-10-13T12:00:00.000Z",
+        "name": "Calcul GPU en échec",
+        "user": "chercheur-10",
+        "partition": "gpu",
+        "status": "failed",
+        "waitingReason": null,
+        "request": {
+          "cpus": 8,
+          "memory": 32,
+          "gpus": 0,
+          "nodeCount": 1
+        },
+        "allocations": []
+      }
+    ],
+    "reservations": [
+      {
+        "id": "r-0",
+        "jobId": "t9",
+        "status": "planned",
+        "startsAt": "2026-10-13T12:00:16.000Z",
+        "endsAt": "2026-10-13T12:00:24.000Z",
+        "allocations": [
+          {
+            "nodeId": "node0",
+            "cpus": 8,
+            "memory": 32,
+            "gpus": 0
+          }
+        ]
+      }
+    ]
+  }
+}
