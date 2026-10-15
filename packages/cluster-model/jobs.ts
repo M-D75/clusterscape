@@ -1,0 +1,8 @@
+import type{Snapshot}from'../contracts';
+export type Job=Snapshot['state']['jobs'][number];
+export const jobStatus={queued:'En attente',running:'En cours',finished:'Terminé',failed:'Échec'};
+export function searchJobs(s:Snapshot,query:string){const q=query.trim().toLocaleLowerCase('fr');if(!q)return [];return s.state.jobs.filter(j=>j.id.toLowerCase().includes(q)||j.user.toLowerCase().includes(q)).sort((a,b)=>Number(b.id.toLowerCase()===q)-Number(a.id.toLowerCase()===q)||a.id.localeCompare(b.id,'fr',{numeric:true}));}
+export function jobLinks(s:Snapshot,id:string){const job=s.state.jobs.find(j=>j.id===id);return {allocated:job?.allocations.map(a=>a.nodeId)??[],reserved:s.state.reservations.filter(r=>r.jobId===id&&r.status!=='finished').flatMap(r=>r.allocations.map(a=>a.nodeId)).filter((v,i,a)=>a.indexOf(v)===i)};}
+export type JobFollow={id:string;cluster:string;epoch:string;submittedAt:string|undefined;revision:number;mode:'live'|'missing'|'replaced';snapshot:Snapshot};
+/** Ne rattache jamais un suivi à une nouvelle occurrence après réemploi d'identifiant. */
+export function followJob(previous:JobFollow|null,s:Snapshot,id:string|null,revision:number):JobFollow|null{if(!id)return null;const job=s.state.jobs.find(j=>j.id===id);if(!previous||previous.id!==id||previous.revision!==revision||previous.cluster!==s.cluster.id)return{id,cluster:s.cluster.id,epoch:s.stream.epoch,submittedAt:job?.submittedAt,revision,mode:job?'live':'missing',snapshot:s};if(previous.mode==='replaced')return previous;if(previous.epoch!==s.stream.epoch||(job&&previous.submittedAt!==job.submittedAt))return{...previous,mode:'replaced'};if(!job)return{...previous,mode:'missing'};return{...previous,mode:'live',snapshot:s};}
