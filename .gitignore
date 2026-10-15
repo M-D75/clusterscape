@@ -1,0 +1,7 @@
+node_modules/
+apps/web/dist/
+*.log
+
+# Local verification captures and operating-system metadata
+/docs/*.jpg
+.DS_Store
