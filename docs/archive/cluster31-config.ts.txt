@@ -1,0 +1,14 @@
+/** Valeurs purement synthétiques, ajustables ici sans modifier le contrat ou le rendu. */
+export const syntheticProfiles={
+ standard:{cpus:32,memory:128,gpus:0},
+ allmem:{cpus:64,memory:256,gpus:0},
+ supermem:{cpus:64,memory:512,gpus:0},
+ gpu:{cpus:32,memory:128,gpus:1},
+};
+export const cluster31Partitions:[string,number,number,keyof typeof syntheticProfiles,number][]=[
+ ['long',19,22,'standard',1080],['short',15,18,'standard',24],['normal',0,14,'standard',336],
+ ['supermem',26,27,'supermem',336],['global',28,29,'standard',24],['highmem',23,25,'allmem',1080],['gpu',30,30,'gpu',504],
+];
+
+/** Variantes de démonstration au sein de normal, pas caractéristiques matérielles réelles. */
+export const cluster31NodeOverrides:Record<number,Partial<{cpus:number;memory:number;gpus:number}>>={0:{cpus:16,memory:64},1:{cpus:64,memory:256},2:{memory:256}};
